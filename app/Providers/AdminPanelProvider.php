@@ -91,7 +91,10 @@ class AdminPanelProvider extends PanelProvider
             ->userMenuItems([
                 MenuItem::make()
                     ->label('Test panel')
-                    ->url(fn (): string => route('filament.test.pages.dashboard'))
+                    ->url(fn (): string => route('filament.test.pages.dashboard')),
+                MenuItem::make()
+                    ->label('Throw exception')
+                    ->url(fn (): string => route('test.exception')),
             ])
             ->middleware([
                 EncryptCookies::class,
